@@ -1,4 +1,4 @@
-import {Post} from '@/app/pages/blog/page';
+import {Post} from '@/app/components/Posts/Posts';
 import {ReactElement} from 'react';
 
 export async function getPost(id: string) {
