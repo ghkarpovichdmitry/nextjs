@@ -11,6 +11,7 @@ export interface Post {
 
 export async function getAllPosts() {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts', { next: { revalidate: 60 } });
+    // const response = await fetch('/api/posts/', { next: { revalidate: 60 } });
 
     if (!response.ok) throw new Error('Fetching posts error');
 
