@@ -1,5 +1,15 @@
-import {getPost} from '@/app/shared/services/requests';
+import {Post} from '@/app/pages/blog/page';
 import {ReactElement} from 'react';
+
+export async function getPost(id: string) {
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+        next: { revalidate: 60 },
+    });
+
+    if (!response.ok) throw new Error('Fetching post error');
+
+    return response.json();
+}
 
 export async function generateMetadata({ params: {id} }: Props) {
     const post = await getPost(id);
@@ -16,7 +26,7 @@ interface Props {
 }
 
 export default async function Post({ params: {id} }: Props): Promise<ReactElement> {
-    const post = await getPost(id);
+    const post: Post = await getPost(id);
 
     return (
         <>
