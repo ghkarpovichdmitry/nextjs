@@ -1,4 +1,4 @@
-import {Post} from '@/app/components/Posts/Posts';
+import {PostType} from '@/app/components/Posts/Posts';
 import {ReactElement} from 'react';
 
 export async function getPost(id: string) {
@@ -26,7 +26,7 @@ interface Props {
 }
 
 export default async function Post({ params: {id} }: Props): Promise<ReactElement> {
-    const post: Post = await getPost(id);
+    const post: PostType = await getPost(id);
 
     return (
         <>

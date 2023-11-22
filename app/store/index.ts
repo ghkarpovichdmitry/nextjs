@@ -1,9 +1,9 @@
 import {getPostsBySearch} from '@/app/components/PostSearch/PostSearch';
-import {getAllPosts, Post} from '@/app/components/Posts/Posts';
+import {getAllPosts, PostType} from '@/app/components/Posts/Posts';
 import {create} from 'zustand';
 
 interface UsePosts {
-    posts: Post[];
+    posts: PostType[];
     isLoading: boolean;
     getPosts: Promise<void>
     getPostsBySearch: (val: string) => Promise<void>

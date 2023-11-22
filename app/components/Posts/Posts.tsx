@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import useSWR from 'swr';
 
-export interface Post {
+export interface PostType {
     id: number
     userId: number
     title: string
@@ -28,7 +28,7 @@ export default function Posts() {
     return (
         !!posts?.length
         ? <ul>
-            {posts?.map((post: Post) => (
+            {posts?.map((post: PostType) => (
                 <li key={post.id}>
                     <Link href={`/pages/blog/${post.id}`}>{post.title}</Link>
                 </li>

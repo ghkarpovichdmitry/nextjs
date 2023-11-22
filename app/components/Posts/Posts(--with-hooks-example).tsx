@@ -4,7 +4,7 @@ import {usePosts} from '@/app/store/index';
 import {useEffect} from 'react';
 import {shallow} from 'zustand/esm/shallow';
 
-export interface Post {
+export interface PostType {
     id: number
     userId: number
     title: string
@@ -36,7 +36,7 @@ export default function Posts() {
     return (
         !!posts?.length
         ? <ul>
-            {posts?.map((post: Post) => (
+            {posts?.map((post: PostType) => (
                 <li key={post.id}>
                     <Link href={`/pages/blog/${post.id}`}>{post.title}</Link>
                 </li>

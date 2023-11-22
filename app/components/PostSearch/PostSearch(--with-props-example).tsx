@@ -1,5 +1,5 @@
 'use client';
-import {Post} from '@/app/components/Posts/Posts';
+import {PostType} from '@/app/components/Posts/Posts';
 import {
     FormEventHandler,
     SyntheticEvent,
@@ -7,7 +7,7 @@ import {
 } from 'react';
 
 interface PostSearchProps {
-    onSearch: (posts: Post[]) => void;
+    onSearch: (posts: PostType[]) => void;
 }
 
 export async function getPostsBySearch(search: string) {
