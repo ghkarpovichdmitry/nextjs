@@ -39,8 +39,10 @@ export default function Blog() {
             { isLoading
                 ? <h3>Loading...</h3>
                 : <>
-                    <PostSearch onSearch={setPosts}/>
-                    <Posts posts={posts}/>
+                    {/*<PostSearch onSearch={setPosts}/> <!-- tied with PostSearch with-props-example).tsx --> */}
+                    <PostSearch/>
+                    {/*<Posts posts={posts}/> <!-- tied with PostSearch with-props-example).tsx -->*/}
+                    <Posts/>
                   </>
             }
         </>

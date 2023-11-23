@@ -5,7 +5,7 @@ import {create} from 'zustand';
 interface UsePosts {
     posts: PostType[];
     isLoading: boolean;
-    getPosts: Promise<void>
+    getPosts: () => Promise<void>
     getPostsBySearch: (val: string) => Promise<void>
 }
 
@@ -13,13 +13,13 @@ export const usePosts = create<UsePosts>()((set) => ({
     posts: [],
     isLoading: false,
     getPosts: async () => {
-        set({ loading: true });
+        set({ isLoading: true });
         const posts = await getAllPosts();
-        set({ posts, loading: false });
+        set({ posts, isLoading: false });
     },
     getPostsBySearch: async (query) => {
-        set({ loading: true });
+        set({ isLoading: true });
         const posts = await getPostsBySearch(query);
-        set({ posts, loading: false });
+        set({ posts, isLoading: false });
     }
 }));

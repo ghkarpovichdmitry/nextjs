@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import {usePosts} from '@/app/store/index';
 import {useEffect} from 'react';
-import {shallow} from 'zustand/esm/shallow';
+import {shallow} from 'zustand/shallow';
 
 export interface PostType {
     id: number
@@ -21,7 +21,7 @@ export async function getAllPosts() {
 
 export default function Posts() {
     const [isLoading, getPosts, posts] = usePosts(
-        (state: usePosts) => [state.isLoading, state.getPosts, state.posts],
+        (state) => [state.isLoading, state.getPosts, state.posts],
         shallow
     );
 

@@ -9,9 +9,8 @@ export async function GET(req: Request) {
     let currentPosts = posts;
 
     if (query) {
-        currentPosts = posts.filter(post => (
-            post.title.toLowerCase().includes(query.toLowerCase())
-                || post.body.toLowerCase().includes(query.toLowerCase())
+        currentPosts = posts.filter(post => (post.title.toLowerCase().includes(query.toLowerCase())
+            || post.body.toLowerCase().includes(query.toLowerCase())
         ));
     }
 
@@ -21,5 +20,5 @@ export async function GET(req: Request) {
 export async function POST(req: Request) {
     const body = await req.json();
     // here should be added logic
-    return NextResponse.json({body});
+    return NextResponse.json({ body });
 }

@@ -1,6 +1,7 @@
 'use client';
 import {PostType} from '@/app/components/Posts/Posts';
 import {
+    ChangeEvent,
     FormEventHandler,
     SyntheticEvent,
     useState
@@ -34,7 +35,7 @@ export default function PostSearch({onSearch}: PostSearchProps) {
                 type='search'
                 value={searchValue}
                 placeholder='Search'
-                onChange={(e: SyntheticEvent) => setSearchValue(e.target.value)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value) }
                 className='post-search-form__input'
             />
             <button

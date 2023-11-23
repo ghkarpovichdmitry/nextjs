@@ -3,11 +3,14 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 interface NavLink {
-    label: string
-    href: string
-}
+    label: string;
+    href: string;
+};
+interface NavigationProps {
+    navLinks: NavLink[];
+};
 
-const Navigation = ({navLinks}: NavLink[]) => {
+const Navigation = ({ navLinks }: NavigationProps) => {
     const pathName = usePathname();
 
     return <>
