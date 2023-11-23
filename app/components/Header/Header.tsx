@@ -1,12 +1,16 @@
-import Link from 'next/link';
+import { Navigation } from '@/app/components/Navigation/Navigation';
 import { type ReactElement } from 'react';
 
 export const Header = (): ReactElement => {
+    const navItems = [
+        { label: 'Home', href: '/' },
+        { label: 'About', href: '/pages/about' },
+        { label: 'Blog', href: '/pages/blog' },
+    ];
+
     return (
         <header className="header align-center">
-            <Link href='/'>Home</Link>
-            <Link href='/pages/about'>About</Link>
-            <Link href='/pages/blog'>Blog</Link>
+            <Navigation navLinks={navItems}/>
         </header>
     );
 };

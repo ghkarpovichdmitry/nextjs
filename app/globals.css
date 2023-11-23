@@ -119,14 +119,17 @@ body {
 .main-section {
   flex: 1;
   padding: 5px 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.header {
-  padding: 10px 15px;
+h1, h2, h3, h4 {
+  margin-bottom: 30px;
 }
 
-.footer {
-  padding: 15px;
+p {
+  margin-bottom: 15px;
 }
 
 ul {
@@ -137,4 +140,27 @@ ul {
 .header a,
 ul li {
   margin: 0 15px;
+}
+
+.header,
+.footer {
+  background-color: darkgreen;
+  padding: 20px 15px;
+}
+
+.active-navigation {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.post-search-form {
+  margin: 15px auto;
+}
+
+.post-search-form__input,
+.post-search-form__button {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 15px;
+  border: 1px solid lightgreen;
 }
